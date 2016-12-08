@@ -4,6 +4,12 @@
 
     void Application_Start(object sender, EventArgs e)
     {
+        
+
+    }
+
+    void Application_AcquireRequestState(object sender, EventArgs e)
+    {
         List<Book> BookList = new List<Book>();
         BookList.Add(new Book() { Id = 1, Category="Math", Title = "Algebra 101", Author = "Albert Einstein", Available = true });
         BookList.Add(new Book() { Id = 2, Category="Computer Science", Title = "Programming for Dummies", Author = "Yuri Gagari", Available = false });
@@ -25,12 +31,6 @@
             Session["RoomList"] = new List<Room>();
         }
         Session["RoomList"] = RoomList;
-
-    }
-
-    void Application_AcquireRequestState(object sender, EventArgs e)
-    {
-
     }
 
     void Application_End(object sender, EventArgs e)
