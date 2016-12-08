@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="func.js" type="text/javascript"></script>
+    <script src="script.js"></script>
+    <title>jQuery Side Bar Menu</title>
+    <link href="styles/styles.css" rel="stylesheet" />
+    <link href="styles/reset.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color: #9d9d9d">
+    <div id="dvBodyHolder">
+        <form id="form1" runat="server">
+
+            <div id="sidebar_menu">
+                <ul>
+                    <li><a href='..\Default.aspx'><span style="font-size: 18px;font-weight: bold;color: white;">Library System</span></a></li>
+                    <li class='has-sub'><a href='#'><span>Search Book</span></a>
+                        <ul>
+                            <li><a href='..\SearchTitle.aspx'><span>By title</span></a></li>
+                            <li><a href='..\SearchAuthor.aspx'><span>By author</span></a></li>
+                            <li class='last'><a href='..\SearchCategory.aspx'><span>By category</span></a></li>
+                        </ul>
+                    </li>
+                    <li class='has-sub'><a href='..\ReserveRoom.aspx'><span>Reserve Room</span></a>
+                        <%--<ul>
+                            <li><a href='#'><span>Book</span></a></li>
+                            <li class='last'><a href='#'><span>Room</span></a></li>
+                        </ul>--%>
+                    </li>
+                    <li class='last'><a href='..\Payment.aspx'><span>Payment</span></a></li>
+                    <li class='last'><a href='..\Register.aspx'><span>Register</span></a></li>
+                </ul>
+            </div>
+
+            <div id="dvContent">
+                
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
